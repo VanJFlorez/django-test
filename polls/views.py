@@ -6,6 +6,13 @@ from django.views import generic
 
 from .models import Question, Choice
 
+def widgets(request):
+  return render(request, 'polls/widgets.html', {'test': 'string demo'})
+
+def widgets_demo(request):
+  return render(request, 'polls/widgets_demo.html', {'test': 'string test'})
+  
+
 class IndexView(generic.ListView):
   template_name = 'polls/index.html'
   context_object_name = 'latest_question_list'
